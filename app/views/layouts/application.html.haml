@@ -7,4 +7,21 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    - if flash[:message].present?
+      #message
+        = flash[:message]
+    - if flash[:warning].present?
+      #warning
+        = flash[:warning]
+    - if flash[:danger].present?
+      #danger
+        = flash[:danger]
+    - if flash[:errors].present?
+      #errors
+        The following errors occurred:
+        %ul
+          - flash[:errors].each do |error_message|
+            %li= error_message
+    .content_wrapper
+      .main_content
+        = yield
