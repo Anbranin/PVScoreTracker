@@ -6,6 +6,7 @@ class DivisionTeamsController < ApplicationController
   def create
     # params should include the team and a division
     # team_id is team find by name
-    # division_id is division find by name
+    # division_id is division find by type
+    # year is params [ :year  ]
   end
 end

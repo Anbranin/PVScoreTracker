@@ -5,6 +5,6 @@ class TeamsController < ApplicationController
   end
 
   def create
-
+    # params should include a team name
   end
 end
