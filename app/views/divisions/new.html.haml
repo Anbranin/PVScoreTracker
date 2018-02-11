@@ -1,0 +1,8 @@
+%h1 Create a New Division
+.form-container
+  =form_tag divisions_path, class: 'form-horizontal' do
+    .form-group
+      =label_tag :name, nil, class: 'control-label'
+      =text_field_tag :name, nil, required: true, class: 'form-control'
+    .form-group
+      =submit_tag 'Add Division', class: 'btn btn-default'
