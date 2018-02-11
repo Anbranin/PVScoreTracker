@@ -1,0 +1,6 @@
+Team management page
+Division management page - Combine?
+
+Eventually: Namespace DivisionTeams to Teams?
+
+DivisionTeams belong to a Game, Games have years.
