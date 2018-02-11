@@ -19,7 +19,13 @@ ActiveRecord::Schema.define(version: 20170506180243) do
   end
 
   create_table "divisions", force: :cascade do |t|
-    t.string "type"
+    t.string "name"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "teams", force: :cascade do |t|
