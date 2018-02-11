@@ -1,12 +1,21 @@
 class DivisionTeamsController < ApplicationController
-  def index
-    @teams = DivisionTeam.all
+
+  def new
+    @teams = Team.all
+    @divisions = Division.all
+    @division_teams = @game.division_teams
   end
 
   def create
-    # params should include the team and a division
-    # team_id is team find by name
-    # division_id is division find by type
-    # year is params [ :year  ]
+    team = Team.find(params[:team])
+    division = Division.find(params[:division])
+    division_team = DivisionTeam.new(team: team, division: division, game: @game)
+    if division_team.save
+      flash[:success] = 'Team successfully added'
+    else
+      flash[:errors] = division_team.errors.full_messages
+    end
+    redirect_to action: :new and return
   end
+
 end
