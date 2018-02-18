@@ -1,21 +1,17 @@
 class TeamsController < ApplicationController
 
   def index
-    @teams = Team.all
+    @teams = Team.all.order(:name)
   end
 
   def create
     team = Team.new(name: params[:name])
     if team.save
       flash[:success] = 'Team Created Successfully'
-      redirect_to game_url(@game) and return
     else
       flash[:errors] = team.errors.full_messages
-      redirect_to action: :new and return
     end
+    redirect_to action: :new and return
   end
 
-  def new
-    @divisions = Division.all
-  end
 end

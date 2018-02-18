@@ -1,22 +1,24 @@
 =link_to 'Add Teams', new_team_url, class: 'btn btn-default'
 =link_to 'Add Division', new_division_url, class: 'btn btn-default'
 
-.row
-  #form-sidebar.col-md-8
-    %h1.h3 Current Teams in Game
-    %ul
-      -@division_teams.each do |division_team|
-        %li=division_team.description
-  #form-sidebar.col-md-4
-    %h1.h3 Add to Game
-    =form_tag game_division_teams_url, class: 'form-horizontal' do
-      .form-group
-        =select_tag :team,
-          options_from_collection_for_select(@teams, 'id', 'name'),
-          class: 'select-picker form-control', required: true, include_blank: true
-      .form-group
-        =select_tag :division,
-          options_from_collection_for_select(@divisions, 'id', 'name'),
-          class: 'select-picker form-control', required: true, include_blank: true
-      .form-group
-        =submit_tag 'Add Team to Game', class: 'btn btn-default'
+-if @divisions.present? && @teams.present?
+
+  .row
+    #form-sidebar.col-md-8
+      %h1.h3 Current Teams in Game
+      %ul
+        -@division_teams.each do |division_team|
+          %li=division_team.description
+    #form-sidebar.col-md-4
+      %h1.h3 Add to Game
+      =form_tag game_division_teams_url, class: 'form-horizontal' do
+        .form-group
+          =select_tag :team,
+            options_from_collection_for_select(@teams, 'id', 'name'),
+            class: 'select-picker form-control', required: true, include_blank: true
+        .form-group
+          =select_tag :division,
+            options_from_collection_for_select(@divisions, 'id', 'name'),
+            class: 'select-picker form-control', required: true, include_blank: true
+        .form-group
+          =submit_tag 'Add Team to Game', class: 'btn btn-default'

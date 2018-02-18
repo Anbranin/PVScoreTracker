@@ -1,9 +1,9 @@
 class DivisionTeamsController < ApplicationController
 
   def new
-    @teams = Team.all
+    @teams = Team.all.order(:name)
     @divisions = Division.all
-    @division_teams = @game.division_teams
+    @division_teams = @game.division_teams.includes(:team).order('teams.name')
   end
 
   def create

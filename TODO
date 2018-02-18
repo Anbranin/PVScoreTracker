@@ -1,5 +1,17 @@
-
-Divide the game/show page into two parts, boys and girls divisions
-
 later/optional:
 - Make division_teams new/index into partials?
+
+
+Add Pool
+- letter (A, B)
+- how many teams?
+  say 2 teams - A1 - team name, A2 - team name. So, TeamPools? 
+
+Match
+- add start_time, end_time
+- pick day (sat/sun)
+- add teams playing, pick from TeamPools
+  how is that going to go? Oh, click add button
+  and then it gives you a list of teampools to VS
+  A1 - radnor vs A5 - 
+  do matches have TeamPools? 

@@ -37,10 +37,10 @@
       - if @game.present?
         %h1.h3=@game.year
         %ul.nav.nav-tabs
-          %li{class: tab(@tab, 'girls-pool')}=link_to 'Girls Pool', girls_pool_game_url
-          %li{class: tab(@tab, 'boys-pool')}=link_to 'Boys Pool', boys_pool_game_url
-          %li{class: tab(@tab, 'girls-spirit')}=link_to 'Girls Spirit', girls_spirit_game_url
-          %li{class: tab(@tab, 'boys-spirit')}=link_to 'Boys Spirit', boys_spirit_game_url
-          %li{class: tab(@tab, 'girls-bracket')}=link_to 'Girls Bracket', girls_bracket_game_url
-          %li{class: tab(@tab, 'boys-bracket')}=link_to 'Boys Bracket', boys_bracket_game_url
+          %li{class: tab(@tab, 'girls-pool')}=link_to 'Girls Pool', girls_pool_game_url(@game)
+          %li{class: tab(@tab, 'boys-pool')}=link_to 'Boys Pool', boys_pool_game_url(@game)
+          %li{class: tab(@tab, 'girls-spirit')}=link_to 'Girls Spirit', girls_spirit_game_url(@game)
+          %li{class: tab(@tab, 'boys-spirit')}=link_to 'Boys Spirit', boys_spirit_game_url(@game)
+          %li{class: tab(@tab, 'girls-bracket')}=link_to 'Girls Bracket', girls_bracket_game_url(@game)
+          %li{class: tab(@tab, 'boys-bracket')}=link_to 'Boys Bracket', boys_bracket_game_url(@game)
       = yield
