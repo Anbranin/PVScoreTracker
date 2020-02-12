@@ -9,7 +9,7 @@ gem 'haml', '~> 4.0.5'
 gem 'haml-rails', '~> 0.9'
 gem 'rails', '~> 5.1.0'
 gem 'sqlite3'
-gem 'puma', '~> 3.7'
+gem 'puma'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
@@ -22,7 +22,7 @@ end
 
 group :development, :test do
   gem 'pry-byebug'
-	gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
+  gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
   gem 'capybara', '~> 2.13.0'
   gem 'selenium-webdriver'
 end
