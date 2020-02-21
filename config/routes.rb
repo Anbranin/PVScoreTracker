@@ -10,6 +10,9 @@ Rails.application.routes.draw do
       get :girls_bracket
       get :boys_bracket
     end
+    collection do
+      get :current
+    end
     resources :division_teams
   end
 
