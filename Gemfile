@@ -4,10 +4,9 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-gem 'coffee-rails', '~> 4.2'
-gem 'haml', '~> 4.0.5'
-gem 'haml-rails', '~> 0.9'
-gem 'rails', '~> 5.1.0'
+gem 'haml'
+gem 'haml-rails'
+gem 'rails', '~> 5.2.0'
 gem 'sqlite3'
 gem 'puma'
 gem 'sass-rails', '~> 5.0'
@@ -36,5 +35,3 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
