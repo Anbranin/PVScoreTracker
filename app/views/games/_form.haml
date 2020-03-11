@@ -1,0 +1,6 @@
+= form_with model: @game, local: true do |f|
+  .form-group
+    = f.label :year
+    = f.text_field :year, class: 'form-control'
+  .form-group
+    = f.submit 'Save game', class: 'btn btn-primary'
