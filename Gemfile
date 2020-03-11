@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 gem 'haml'
 gem 'haml-rails'
+gem 'jquery-rails'
 gem 'rails', '~> 5.2.0'
 gem 'sqlite3'
 gem 'puma'
