@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
       @game = Game.find session[:game_id]
     elsif params[:game_id]
       @game = Game.find params[:game_id]
+      session[:game_id] = params[:game_id]
     end
   end
 end
