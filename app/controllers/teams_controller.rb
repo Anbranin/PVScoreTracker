@@ -19,4 +19,9 @@ class TeamsController < ApplicationController
     end
   end
 
+  private
+
+  def team_params
+    params.require(:team).permit(:name, :division_id)
+  end
 end
