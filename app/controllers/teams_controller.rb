@@ -15,8 +15,8 @@ class TeamsController < ApplicationController
       redirect_to action: :new
     else
       flash[:errors] = team.errors.full_messages
+      render :new
     end
-    redirect_to action: :new and return
   end
 
 end
