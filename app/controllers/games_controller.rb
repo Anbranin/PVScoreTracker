@@ -34,7 +34,7 @@ class GamesController < ApplicationController
   def tabs
     @game = Game.find(params[:id])
     session[:game_id] = @game.id
-    @division_teams = @game.division_teams
+    @teams = @game.teams
     @divisions = Division.all
   end
 
