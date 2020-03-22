@@ -9,12 +9,12 @@ class TeamsController < ApplicationController
   end
 
   def create
-    team = Team.new team_params
-    if team.save
+    @team = Team.new team_params
+    if @team.save
       flash[:success] = 'Team Created Successfully'
       redirect_to action: :new
     else
-      flash[:errors] = team.errors.full_messages
+      flash.now[:danger] = @team.errors.full_messages
       render :new
     end
   end

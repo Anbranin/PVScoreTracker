@@ -1,8 +1,8 @@
 .form-container
-  = form_with model: @team, class: 'form-horizontal' do |f|
+  = form_with model: @team, class: 'form-horizontal', local: true do |f|
     .form-group
       =f.label :name, class: 'control-label'
-      =f.text_field :name, required: true, class: 'form-control'
+      =f.text_field :name, class: 'form-control'
     .form-group
       =f.label :division_id
       =f.select :division_id, Division.all.collect{ |d| [ d.name, d.id ] }, { include_blank: 'Select a division' }, class: 'custom-select'

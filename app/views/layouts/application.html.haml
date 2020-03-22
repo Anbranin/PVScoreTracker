@@ -11,25 +11,16 @@
       .container-fluid
         .navbar-header
           .navbar-brand
-            =link_to 'All Games', root_url
+            = link_to 'All Games', root_url
         %ul.nav.navbar-nav
-          %li=link_to 'Current Game', current_games_url
-          %li=link_to 'Teams', new_team_url
-          %li=link_to 'Divisions', new_division_url
-    - if flash[:message].present?
-      #message
-        = flash[:message]
-    - if flash[:warning].present?
-      #warning
-        = flash[:warning]
-    - if flash[:danger].present?
-      #danger
-        = flash[:danger]
-    - if flash[:errors].present?
-      #errors
-        The following errors occurred:
-        %ul
-          - flash[:errors].each do |error_message|
-            %li= error_message
+          %li= link_to 'Current Game', current_games_url
+          %li= link_to 'Teams', new_team_url
+          %li= link_to 'Divisions', new_division_url
     .container
+      - flash.each do |name, messages|
+        .alert.alert-dismissible{class: "alert-#{name}"}
+          %button.close{data: {dismiss: 'alert'}, aria: {label: 'Close'}}
+            %span{aria: {hidden: 'true'}}
+              &times;
+          = list_messages(messages)
       = yield
